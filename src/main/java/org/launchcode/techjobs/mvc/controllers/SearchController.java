@@ -31,7 +31,7 @@ public class SearchController extends TechJobsController{
     @PostMapping("results")
     public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm){
         ArrayList<Job> jobs;
-        if(searchType.equals("all") || searchType.equals("")) {
+        if(searchTerm.equals("all") || searchTerm.equals("")) {
             jobs = JobData.findAll();
             model.addAttribute("title", "All Jobs");
         } else {
